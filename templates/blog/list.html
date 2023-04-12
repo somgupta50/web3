@@ -1,0 +1,55 @@
+{% extends 'layout/base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="display-1">Details about Mental Health</h3>
+        </div>
+        <!-- display the content in a list/grid -->
+        <div class="col-md-9    ">
+
+            {% for item in articles %}
+            <div class="card mb-3">
+
+                {% if item.image %}
+                <img src="{{item.image.url}}" alt="" class="card-img">
+                {% endif %}
+
+                <div class="card-body">
+                    <h3 class="card-title">{{item.title}}</h3>
+                    <small>{{item.created_on.date}}</small>
+                </div>
+            </div>
+            {% empty %}
+            <div class="card">
+                <div class="card-body">
+                    <p class="lead">No Articles found</p>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        <div class="col-md-3">
+            <p class="lead">
+                Mental health prediction using speech is a growing area of research and development. The basic idea is that the characteristics of a person's speech can be analyzed to identify patterns that may be indicative of various mental health conditions. Some researchers have found that changes in speech patterns can be associated with conditions such as depression, anxiety, bipolar disorder, and schizophrenia.
+            </p>
+        </div>
+    </div>
+</div>
+<div class = "container p-5 bg-dark text-white">
+    <div class="row">
+        <div class="col-md-6 mx-auto"></div>
+        <form method="post" autocomplete="off">
+        {% csrf_token %}
+        {% bootstrap_form form layout="inline" %}
+        <button type="submit" class="btn btn-light text-secondary my-3">Submit</button>
+    </form>
+
+    </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block css %}{% endblock css %}
+{% block js %}{% endblock js %}
