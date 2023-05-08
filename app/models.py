@@ -18,3 +18,11 @@ class Contact(models.Model):
     
     def __str__(self):
         return self.name
+    
+class Audio(models.Model):
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    path = models.CharField(max_length=255)
+    created_on = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.audio_file
