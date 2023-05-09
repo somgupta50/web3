@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-    <head>
         <title>Tutorial &gt; Audio Recorder</title>
         <link rel="canonical" href="https://markjivko.com/tutorials/B3wWIsNHPk4/">
         <meta charset="UTF-8">
@@ -13,7 +12,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="icon" type="image/ico" href="https://markjivko.com/favicon.ico">
         <style type="text/css">
+            .btn{
+                background-color: #D9AFD9;
+                border-radius: .5rem;
+                padding: 2rem;
+              
+              }
+
             body {
+                background-color: #6fe1f5;
                 position: absolute;
                 display: -webkit-box;
                 display: -webkit-flex;
@@ -215,5 +222,11 @@
             </div>
             <div data-role="recordings"></div>
         </div>
+        <head>
+            <div style="margin-block-start: -30%; position: absolute; ">
+                <form>
+                    <input class="btn" type="button" value="Back to recordings" onclick="history.back()">
+                   </form>
+                </div>
     </body>
 </html>
